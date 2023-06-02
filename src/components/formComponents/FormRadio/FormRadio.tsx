@@ -8,34 +8,27 @@ import {
 import {Controller} from "react-hook-form";
 import {TFormProps} from "../formProps";
 
-const options = [
-  {
-    label: "Radio Option 1",
-    value: "1",
-  },
-  {
-    label: "Radio Option 2",
-    value: "2",
-  },
-];
+type TRadioList = {
+  options: {
+    label: string
+    value: string
+  }[]
+} & Omit<TFormProps, 'SetValue'>
+
+const FormControlLabelSx = {
+  marginLeft: '-5px',
+  '&>span': {
+    padding: '5px'
+  }
+}
 
 export const FormRadio = (
   {
     name,
     control,
     label,
-  }: TFormProps) => {
-
-  const generateRadioOptions = () => {
-    return options.map((singleOption, index) => (
-      <FormControlLabel
-        key={index}
-        value={singleOption.value}
-        label={singleOption.label}
-        control={<Radio/>}
-      />
-    ));
-  };
+    options
+  }: TRadioList) => {
 
   return (
     <FormControl component="fieldset">
@@ -49,7 +42,15 @@ export const FormRadio = (
                    formState,
                  }) => (
           <RadioGroup value={value} onChange={onChange}>
-            {generateRadioOptions()}
+            {options.map((item, idx) => (
+              <FormControlLabel
+                sx={FormControlLabelSx}
+                key={idx}
+                value={item.value}
+                label={item.label}
+                control={<Radio/>}
+              />
+            ))}
           </RadioGroup>
         )}
       />

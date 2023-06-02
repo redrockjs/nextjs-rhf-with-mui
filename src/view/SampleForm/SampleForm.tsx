@@ -36,13 +36,21 @@ export function SampleForm() {
         display: "grid",
         gridRowGap: "20px",
         padding: "20px",
-        margin: "10px 300px",
+        margin: "10px 5vw",
       }}>
         <Typography variant="h3"> Form Demo</Typography>
 
         <FormInput name='text' control={control} label='Text input'/>
 
-        <FormRadio name='radio' control={control} label='Radio input'/>
+        <FormRadio
+          name='radio'
+          control={control}
+          label='Radio input'
+          options={[
+            {label: 'Option 1', value: '1'},
+            {label: 'Option 2', value: '2'},
+          ]}
+        />
 
         <FormDropdown name='dropdown' control={control} label='Dropdown input'/>
 
