@@ -1,0 +1,53 @@
+.BasePagination {
+  margin: 20px;
+  font-family: Inter, -apple-system, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #222426;
+
+  & [class*="active"] {
+    background-color: #FFF2CC;
+    &:hover{
+      background-color: #FFF2CC;
+    }
+  }
+
+  & [class*="disabled"] {
+    opacity: 0.5;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    max-width: min-content;
+  }
+
+  & li {
+    height: 44px;
+    width: 44px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #FFF9E5;
+    }
+
+    &:nth-child(2) {
+      background-color: transparent;
+    }
+
+    &:nth-last-child(2) {
+      background-color: transparent;
+    }
+  }
+
+  & li:first-child, li:last-child {
+    display: none;
+  }
+
+}
