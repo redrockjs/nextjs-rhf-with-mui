@@ -45,6 +45,12 @@ export default function Navbar() {
             Login
           </Link>
         </li>
+        |
+        <li>
+          <Link href={'/slider'}>
+            Slider
+          </Link>
+        </li>
       </ul>
     </nav>
   )

@@ -1,0 +1,34 @@
+.Root {
+  width: 500px;
+}
+
+.Container {
+  height: 300px;
+}
+
+.Row {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Image {
+  width: 600px;
+  height: 400px;
+  transition: all 0.5s ease;
+}
+
+.ProgressBar {
+  height: 2px;
+  width: 100%;
+  position: relative;
+  background: #FFFFFF;
+
+  & span {
+    display: block;
+    height: 100%;
+    background-color: #91110E;
+    overflow: hidden;
+  }
+}
